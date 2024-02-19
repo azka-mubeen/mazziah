@@ -34,7 +34,7 @@ class _WelcomeState extends State<Welcome> {
               "Get ready to level up your shopping\nexperience with our innovative app. We've\nadded thrilling elements to make your\njourney even more engaging and rewarding",
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
             const Spacer(),
@@ -55,7 +55,7 @@ class _WelcomeState extends State<Welcome> {
                         Button(buttonText: 'Get Started', onPressed: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
                         },),
-                        SizedBox(height: 20),
+                        SizedBox(height: 10),
                         Text(
                           'Mazziah app is officially registered\nwith Ecommerce number XXXXXX at XXXX\nMa3rooof link\nBusiness center linkFills',
                           textAlign: TextAlign.center,
