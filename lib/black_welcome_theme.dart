@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mazziah/login_page.dart';
 import 'package:mazziah/widget/button_widget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class WelcomeBlack extends StatefulWidget {
   const WelcomeBlack({Key? key}) : super(key: key);
   @override
@@ -21,21 +23,21 @@ class _WelcomeState extends State<WelcomeBlack> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.all(30),
+              padding: EdgeInsets.all(30.h),
               child: Image.asset('lib/assets/mazziah.png'),
             ),
             Text(
               'Welcome',
               style: GoogleFonts.roboto(
-                fontSize: 20,
+                fontSize: 20.sp,
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
             Text(
               "Get ready to level up your shopping\nexperience with our innovative app. We've\nadded thrilling elements to make your\njourney even more engaging and rewarding",
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 18.sp,
               ),
             ),
             const Spacer(),
@@ -56,12 +58,12 @@ class _WelcomeState extends State<WelcomeBlack> {
                         Button(buttonText: 'Get Started', onPressed: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
                         },),
-                        SizedBox(height: 20),
+                        SizedBox(height: 20.h),
                         Text(
                           'Mazziah app is officially registered\nwith Ecommerce number XXXXXX at XXXX\nMa3rooof link\nBusiness center linkFills',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 16.sp,
                           ),
                         ),
                       ],

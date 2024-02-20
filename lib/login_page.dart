@@ -4,6 +4,8 @@ import 'package:mazziah/login_otb.dart';
 import 'package:mazziah/widget/button_widget.dart';
 import 'package:mazziah/widget/custom_appbar.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -15,13 +17,13 @@ class LoginPage extends StatelessWidget {
         preferredSize: Size.fromHeight(100),
           child: CustomAppBar()),
       body: ListView(
-        padding: const EdgeInsets.only(left: 20, top: 50),
+        padding:  EdgeInsets.only(left: 20.w, top: 50.h),
         children: [
-          const Text(
+          Text(
             'Business Login',
-            style: TextStyle(fontSize: 28, fontWeight: FontWeight.normal),
+            style: TextStyle(fontSize: 28.sp, fontWeight: FontWeight.normal),
           ),
-          const SizedBox(height: 100,),
+           SizedBox(height: 100.h,),
           Text(
             'Phone No',
             style: GoogleFonts.roboto(fontSize: 18, fontWeight: FontWeight.normal),
@@ -32,7 +34,7 @@ class LoginPage extends StatelessWidget {
             ),
             child: InternationalPhoneNumberInput(
               onInputChanged: (PhoneNumber number) {
-                print(number.phoneNumber); // Handle phone number input
+               // print(number.phoneNumber); // Handle phone number input
               },
               inputDecoration: const InputDecoration(
                 hintText: '56 234 56092',
@@ -43,12 +45,12 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           const Divider(color: Colors.grey,),
-          const SizedBox(height: 10,),
+           SizedBox(height: 10.h,),
           Text(
             'Check your phone number before clicking on get otp',
-            style: GoogleFonts.roboto(fontSize: 14,),
+            style: GoogleFonts.roboto(fontSize: 14.sp,),
           ),
-          const SizedBox(height: 40,),
+           SizedBox(height: 40.h,),
 
           Align(
               alignment: Alignment.bottomCenter,
@@ -61,7 +63,7 @@ class LoginPage extends StatelessWidget {
             children: [
               Text(
                 'By logging in, you agree to Mazziah app ',
-                style: GoogleFonts.roboto(fontSize: 14, color: Colors.black),
+                style: GoogleFonts.roboto(fontSize: 14.sp, color: Colors.black),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -75,13 +77,13 @@ class LoginPage extends StatelessWidget {
                       style: GoogleFonts.roboto(
                         decoration: TextDecoration.underline,
                         color: Colors.black,
-                        fontSize: 14,
+                        fontSize: 14.sp,
                       ),
                     ),
                   ),
                   Text(
                     ' and ',
-                    style: GoogleFonts.roboto(fontSize: 14),
+                    style: GoogleFonts.roboto(fontSize: 14.sp),
                   ),
                   GestureDetector(
                     onTap: (){
@@ -90,7 +92,7 @@ class LoginPage extends StatelessWidget {
                     child: Text(
                       'Privacy Policy',
                       style: GoogleFonts.roboto(
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         decoration: TextDecoration.underline,
                         color: Colors.black,
                       ),

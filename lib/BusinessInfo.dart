@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mazziah/list_of_branch.dart';
 import 'package:toggle_switch/toggle_switch.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BusinessInfo extends StatelessWidget {
   const BusinessInfo({Key? key}) : super(key: key);
@@ -20,14 +21,14 @@ class BusinessInfo extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(20.h),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          const SizedBox(height: 20),
+           SizedBox(height: 20.h),
           Center(
             child: Text(
               'Business Owner Profile',
               style: GoogleFonts.roboto(
-                fontSize: 16,
+                fontSize: 16.sp,
                 fontWeight: FontWeight.normal,
               ),
             ),
@@ -36,39 +37,39 @@ class BusinessInfo extends StatelessWidget {
           Text(
             'Company Name',
             style: GoogleFonts.roboto(
-              fontSize: 16,
+              fontSize: 16.h,
               decoration: TextDecoration.underline,
             ),
           ),
           SizedBox(
-            height: 10,
+            height: 10.h,
           ),
           Container(
-            height: 40,
+            height: 40.h,
             child: TextField(
               decoration: InputDecoration(
                 hintText: 'Enter company name',
                 border: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.black),
                   borderRadius: BorderRadius.circular(
-                      10.0), // Optional: Customize border radius
+                      10.h),
                 ),
               ),
             ),
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: 20.h),
           Row(
             children: [
               ToggleSwitch(
-                minWidth: 120.0,
-                minHeight: 30,
+                minWidth: 120.w,
+                minHeight: 30.h,
                 initialLabelIndex: 0,
                 cornerRadius: 5.0,
                 activeFgColor: Colors.white,
                 inactiveBgColor: Colors.white,
                 inactiveFgColor: Colors.black,
                 borderColor: [Colors.black],
-                borderWidth: 1.5,
+                borderWidth: 1.5.w,
                 totalSwitches: 2,
                 labels: ['Owner', 'Representative'],
                 activeBgColors: [
@@ -80,22 +81,22 @@ class BusinessInfo extends StatelessWidget {
                 },
               ),
               SizedBox(
-                width: 30,
+                width: 30.w,
               ),
               Text(
                 'Name',
                 style: GoogleFonts.roboto(
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   decoration: TextDecoration.underline,
                 ),
               ),
             ],
           ),
           SizedBox(
-            height: 20,
+            height: 20.h,
           ),
           Container(
-            height: 40,
+            height: 40.h,
             child: TextField(
               decoration: InputDecoration(
                 hintText: 'User name',
@@ -107,16 +108,16 @@ class BusinessInfo extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: 10.h),
           Text(
             'Contact Email',
             style: GoogleFonts.roboto(
-              fontSize: 16,
+              fontSize: 16.sp,
               decoration: TextDecoration.underline,
             ),
           ),
           Container(
-            height: 40,
+            height: 40.h,
             child: TextField(
               decoration: InputDecoration(
                 hintText: 'User name',
@@ -128,7 +129,7 @@ class BusinessInfo extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: 10.h),
           Text(
             'Contact No.',
             style: GoogleFonts.roboto(
@@ -136,7 +137,7 @@ class BusinessInfo extends StatelessWidget {
               decoration: TextDecoration.underline,
             ),
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: 10.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -163,7 +164,7 @@ class BusinessInfo extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 50),
+          SizedBox(height: 50.h),
           Center(
             child: ElevatedButton(
               onPressed: () {
@@ -182,7 +183,7 @@ class BusinessInfo extends StatelessWidget {
               child: Text(
                 'Save',
                 style: GoogleFonts.roboto(
-                  fontSize: 20,
+                  fontSize: 20.sp,
                   color: Colors.black,
                 ),
               ),

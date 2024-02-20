@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mazziah/branch_wala_list.dart';
 import 'package:mazziah/list_of_branch.dart';
 import 'package:mazziah/settlement.dart';
 import 'package:mazziah/widget/bar_chart.dart';
@@ -10,6 +9,7 @@ import 'branch_wala.dart';
 import 'models/purchase_model.dart';
 import 'models/walacustomerslist.dart';
 import 'option_business.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 class BranchAnalysis extends StatefulWidget {
@@ -47,43 +47,44 @@ class _BranchAnalysisState extends State<BranchAnalysis> {
             children: [
               Image.asset(
                 'lib/assets/brcAnalysis.png',
+                height: 360.h,
                 width: MediaQuery.of(context).size.width,
                 fit: BoxFit.cover, // adjust this to fit your needs
               ),
               Positioned(
-                top: 220, // adjust this value as needed
-                left: 20, // adjust this value as needed
+                top: 230.h,
+                left: 20.w,
                 child: Row(
                   children: [
                     TextButton(
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>const BranchWala()));
                       },
-                      child: const Text(
+                      child: Text(
                         "Wala's Program",
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(color: Colors.black,
+                        fontSize: 14.sp),
                       ),
                     ),
-                    const SizedBox(width: 20,),
+                     SizedBox(width: 30.w,),
                     TextButton(
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => const BranchPurchase()));
                       },
-                      child: const Text(
+                      child:  Text(
                         "New Purchase",
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(color: Colors.black,fontSize: 14.sp),
                       ),
                     ),
                     TextButton(
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => BranchAnalysis()));
-
                       },
-                      child: const Padding(
-                        padding: EdgeInsets.only(top: 5, right: 2),
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 10.h,left: 14.w, right: 2.w),
                         child: Text(
                           "\nCustomer Analysis",
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.white,fontSize: 14.sp),
                         ),
                       ),
                     ),
@@ -92,7 +93,7 @@ class _BranchAnalysisState extends State<BranchAnalysis> {
               ),
             ],
           ),
-          const SizedBox(height: 10,),
+           SizedBox(height: 8.w,),
           Row(
             children: [
               Expanded(
@@ -100,19 +101,19 @@ class _BranchAnalysisState extends State<BranchAnalysis> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text("Period"),
-                    const SizedBox(width: 5),
+                    SizedBox(width: 10.w),
                     InkWell(
                       onTap: () {
                         // Implement action for opening container
                       },
                       child: Container(
-                        width: 30,
-                        height: 30,
+                        width: 30.w,
+                        height: 25.h,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(color: Colors.black),
                         ),
-                        child: const Icon(Icons.add, color: Colors.black),
+                        child: Icon(Icons.add, color: Colors.black, size: 14.sp,),
                       ),
                     ),
                   ],
@@ -123,19 +124,19 @@ class _BranchAnalysisState extends State<BranchAnalysis> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text("Filter"),
-                    const SizedBox(width: 5),
+                    SizedBox(width: 10.w),
                     InkWell(
                       onTap: () {
                         // Implement action for opening container
                       },
                       child: Container(
-                        width: 30,
-                        height: 30,
+                        width: 30.w,
+                        height: 25.h,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(color: Colors.black),
                         ),
-                        child: const Icon(Icons.add, color: Colors.black),
+                        child:  Icon(Icons.add, color: Colors.black, size: 14.sp,),
                       ),
                     ),
                   ],
@@ -147,54 +148,56 @@ class _BranchAnalysisState extends State<BranchAnalysis> {
        CustomBarChart(data: data),
        Container(
          decoration: BoxDecoration(
-           borderRadius: BorderRadius.circular(25),
+           borderRadius: BorderRadius.circular(25.sp),
            border: Border.all(color: Colors.black),
            color: Colors.white,
          ),
          child: Column(
            children: [
-             const Padding(
-               padding: EdgeInsets.all(10),
-               child: const Row(
+             Padding(
+               padding: EdgeInsets.all(8.h),
+               child:  Row(
                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                  children: [
-                   Text("Wala's Customers", style: TextStyle(fontWeight: FontWeight.bold),),
-                   Text("No. Purchase", style: TextStyle(fontWeight: FontWeight.bold),),
+                   Text("Wala's Customers", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.sp),),
+                   Text("No. Purchase", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.sp),),
                  ],
                ),
              ),
              //Customer list
-             Container(
-               height: 120,
-               child: MediaQuery.removePadding(
-                 removeTop: true,
-                 context: context,
-                 child: ListView.builder(
-                   itemCount: users.length,
-                   itemBuilder: (context, index) {
-                     return Container(
-                       margin: const EdgeInsets.symmetric(horizontal: 8),
-                       decoration: BoxDecoration(
-                         borderRadius: BorderRadius.circular(25),
-                         border: Border.all(color: Colors.black),
-                         color: Colors.white,
-                       ),
-                       child: ListTile(
-                         leading: Text('${index + 1}'), // Displaying the index as leading
-                         title: Row(
-                           children: [
-                             const CircleAvatar(
-                               backgroundColor: Colors.red,
-                               // backgroundImage: AssetImage(users[index].profilePictureUrl),
-                             ),
-                             const SizedBox(width: 10),
-                             Text(users[index].userName),
-                           ],
+             SingleChildScrollView(
+               child: Container(
+                 height: 90.h,
+                 child: MediaQuery.removePadding(
+                   removeTop: true,
+                   context: context,
+                   child: ListView.builder(
+                     itemCount: users.length,
+                     itemBuilder: (context, index) {
+                       return Container(
+                         margin:  EdgeInsets.symmetric(horizontal: 8.w),
+                         decoration: BoxDecoration(
+                           borderRadius: BorderRadius.circular(25),
+                           border: Border.all(color: Colors.black),
+                           color: Colors.white,
                          ),
-                         trailing: Text('${users[index].numberOfPurchases}'),
-                       ),
-                     );
-                   },
+                         child: ListTile(
+                           leading: Text('${index + 1}'), // Displaying the index as leading
+                           title: Row(
+                             children: [
+                               const CircleAvatar(
+                                 backgroundColor: Colors.red,
+                                 // backgroundImage: AssetImage(users[index].profilePictureUrl),
+                               ),
+                               SizedBox(width: 10.w),
+                               Text(users[index].userName),
+                             ],
+                           ),
+                           trailing: Text('${users[index].numberOfPurchases}'),
+                         ),
+                       );
+                     },
+                   ),
                  ),
                ),
              ),

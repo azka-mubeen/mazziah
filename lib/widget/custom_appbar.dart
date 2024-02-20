@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({Key? key}) : super(key: key);
@@ -14,14 +15,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
         side: BorderSide(
           color: Colors.black,
-          width: 2,
+          width: 2.w,
         ),
       ),
       bottom: PreferredSize(
-        preferredSize: Size.fromHeight(50),
+        preferredSize: Size.fromHeight(50.h),
         child: Image.asset(
           'lib/assets/logoicon.png',
-          height: 40,
+          height: 40.h,
         ),
       ),
     );

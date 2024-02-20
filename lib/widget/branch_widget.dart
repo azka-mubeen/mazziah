@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mazziah/BranchUnsub.dart';
 
 import '../models/branch_model.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class BranchWidget extends StatelessWidget {
   final Branch branch;
   const BranchWidget({Key? key, required this.branch}) : super(key: key);
@@ -10,7 +12,7 @@ class BranchWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.symmetric(vertical: 10.w),
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [
@@ -31,8 +33,8 @@ class BranchWidget extends StatelessWidget {
           children: [
             // Leading picture
             Container(
-              width: 80,
-              height: 80,
+              width: 80.w,
+              height: 80.h,
               decoration: BoxDecoration(
                // shape: BoxShape.circle,
                 image: DecorationImage(
@@ -57,13 +59,13 @@ class BranchWidget extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(branch.branchName, style: const TextStyle(fontSize: 18)),
+                          Text(branch.branchName, style:  TextStyle(fontSize: 18.sp)),
                           Text(branch.registrationNo),
                         ],
                       ),
                     ],
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10.h),
                   // Second row with donation and purchase price
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -74,7 +76,7 @@ class BranchWidget extends StatelessWidget {
                         child: Row(
                           children: [
                             Image.asset('lib/assets/donation.png'),
-                            const SizedBox(width: 5),
+                            SizedBox(width: 5.w),
                             Text('${branch.donation}'),
                           ]
                         ),
@@ -83,7 +85,7 @@ class BranchWidget extends StatelessWidget {
                       Row(
                         children: [
                           Image.asset('lib/assets/pp.png'),
-                          const SizedBox(width: 5),
+                          SizedBox(width: 5.w),
                           Text('${branch.purchasePrice} SR'),
                         ],
                       ),
@@ -94,8 +96,8 @@ class BranchWidget extends StatelessWidget {
               ),
             ),
             Container(
-              width: 30,
-              height: 100,
+              width: 30.w,
+              height: 100.h,
               color: branch.color,
             ),
           ],

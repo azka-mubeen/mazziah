@@ -8,6 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mazziah/widget/progress_line2.dart';
 import 'BranchAnalysis.dart';
 import 'option_business.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BranchWalaAdd extends StatefulWidget {
   const BranchWalaAdd({super.key});
@@ -45,7 +46,7 @@ class _BranchWalaAddState extends State<BranchWalaAdd> {
                   Text(
                     "WALA's Program Overview",
                     style: GoogleFonts.roboto(
-                      fontSize: 20,
+                      fontSize: 20.sp,
                       fontWeight: FontWeight.w700,
                       decoration: TextDecoration.underline,
                     ),
@@ -55,7 +56,7 @@ class _BranchWalaAddState extends State<BranchWalaAdd> {
                   Text(
                     "Customer WALA's Program",
                     style: GoogleFonts.roboto(
-                      fontSize: 20,
+                      fontSize: 20.sp,
                       fontWeight: FontWeight.w700,
                       decoration: TextDecoration.underline,
                     ),
@@ -79,11 +80,11 @@ class _BranchWalaAddState extends State<BranchWalaAdd> {
             child: Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.h),
                   child: Image.asset(
                     'lib/assets/branch.png', // Replace 'your_image.png' with your image path
-                    width: 100,
-                    height: 100,
+                    width: 100.w,
+                    height: 100.h,
                   ),
                 ),
                 Column(
@@ -94,12 +95,12 @@ class _BranchWalaAddState extends State<BranchWalaAdd> {
                         Text(
                           "First Milestone",
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                         SizedBox(
-                          width: 60,
+                          width: 60.w,
                         ),
                         IconButton(
                           icon: Icon(Icons.edit),
@@ -112,7 +113,7 @@ class _BranchWalaAddState extends State<BranchWalaAdd> {
                     Text(
                       "Free small Kabab",
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -122,12 +123,12 @@ class _BranchWalaAddState extends State<BranchWalaAdd> {
                         Text(
                           "Required No. Purchases",
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                         SizedBox(
-                          width: 15,
+                          width: 15.w,
                         ),
                         Text("10"),
                       ],
@@ -155,7 +156,7 @@ class _BranchWalaAddState extends State<BranchWalaAdd> {
                   Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(12.0),
+                        padding:  EdgeInsets.all(12.w),
                         child: CircleAvatar(
                           backgroundColor: Colors.grey[300],
                           radius: 50,
@@ -174,12 +175,12 @@ class _BranchWalaAddState extends State<BranchWalaAdd> {
                               Text(
                                 "Second Milestone",
                                 style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 16.sp,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
                               SizedBox(
-                                width: 20,
+                                width: 20..w,
                               ),
                             ],
                           ),
@@ -193,25 +194,25 @@ class _BranchWalaAddState extends State<BranchWalaAdd> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 contentPadding: EdgeInsets.symmetric(
-                                  vertical: 10.0,
-                                  horizontal: 10.0,
+                                  vertical: 10.h,
+                                  horizontal: 10.w,
                                 ),
                               ),
                             ),
                           ),
-                          SizedBox(height: 10),
+                          SizedBox(height: 10.h),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Text(
                                 "Required No. Purchases",
                                 style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 16.sp,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
                               SizedBox(
-                                width: 15,
+                                width: 15.w,
                               ),
                               Container(
                                 decoration: BoxDecoration(
@@ -250,8 +251,8 @@ class _BranchWalaAddState extends State<BranchWalaAdd> {
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 10, horizontal: 20),
+                            padding: EdgeInsets.symmetric(
+                                vertical: 10.h, horizontal: 20.w),
                             child: Text("Cancel"),
                           ),
                         ),
@@ -270,8 +271,7 @@ class _BranchWalaAddState extends State<BranchWalaAdd> {
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 10, horizontal: 20),
+                            padding: EdgeInsets.symmetric(vertical: 10.w, horizontal: 20.h),
                             child: Text("Save"),
                           ),
                         ),

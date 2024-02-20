@@ -6,8 +6,8 @@ import 'package:mazziah/option_business.dart';
 import 'package:mazziah/widget/custom_app_bar.dart';
 import 'package:mazziah/widget/custom_navbar.dart';
 import 'package:toggle_switch/toggle_switch.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'branch_wala_list.dart';
 
 class SettlementMpp extends StatefulWidget {
   const SettlementMpp({Key? key}) : super(key: key);
@@ -27,24 +27,24 @@ class _SettlementMppState extends State<SettlementMpp> {
 
       },),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding:  EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _buildUnderlinedText('Subscription'),
-            const SizedBox(height: 10),
+             SizedBox(height: 10.h),
             Row(
               children: [
                 ToggleSwitch(
-                  minWidth: 110.0,
-                  minHeight: 30,
+                  minWidth: 110.w,
+                  minHeight: 30.h,
                   initialLabelIndex: 0,
                   cornerRadius: 5.0,
                   activeFgColor: Colors.black,
                   inactiveBgColor: Colors.white,
                   inactiveFgColor: Colors.black,
                   borderColor: [Colors.black],
-                  borderWidth: 1.5,
+                  borderWidth: 1.5.w,
                   totalSwitches: 3,
                   labels: ['Basic', 'Value', 'Royal'],
                   activeBgColors: [
@@ -58,7 +58,7 @@ class _SettlementMppState extends State<SettlementMpp> {
                 ),
               ],
             ),
-            const SizedBox(height: 10),
+             SizedBox(height: 10.h),
             Center(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -70,8 +70,8 @@ class _SettlementMppState extends State<SettlementMpp> {
                     ),
                   ),
                   Container(
-                    width: 30,
-                    height: 30,
+                    width: 30.w,
+                    height: 30.h,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.black,
@@ -81,7 +81,7 @@ class _SettlementMppState extends State<SettlementMpp> {
                         'M',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 24,
+                          fontSize: 24.sp,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -90,7 +90,7 @@ class _SettlementMppState extends State<SettlementMpp> {
                 ],
               ),
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: 10.h),
             Center(
               child: ElevatedButton(
                 onPressed: () {
@@ -130,30 +130,30 @@ class _SettlementMppState extends State<SettlementMpp> {
                     top: 0,
                     left: 0,
                     child: Container(
-                      width: 35,
-                      height: 35,
+                      width: 35.w,
+                      height: 35.h,
                       decoration: const BoxDecoration(
                         color: Colors.black,
                         shape: BoxShape.circle,
                       ),
                       child: IconButton(
-                        icon: const Icon(Icons.close,
-                            color: Colors.white, size: 20),
+                        icon:  Icon(Icons.close,
+                            color: Colors.white, size: 20.sp),
                         onPressed: () {},
                       ),
                     ),
                   ),
                   Container(
-                    margin: const EdgeInsets.only(top: 20, left: 30), // Add top margin
+                    margin: EdgeInsets.only(top: 20.h, left: 30.w),
                     width: MediaQuery.of(context).size.width * 0.5,
-                    height: 220,
+                    height: 285.h,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(color: Colors.black),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(10),
+                      padding: EdgeInsets.all(10.h),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -175,23 +175,24 @@ class _SettlementMppState extends State<SettlementMpp> {
                             ),
                             child: const Text('Basic'),
                           ),
-                          const SizedBox(height: 10),
-                          const Text('Minimum Purchase Price'),
-                          const SizedBox(height: 10),
+                          SizedBox(height: 10.h),
+                          Text('Minimum Purchase Price', style: TextStyle(fontSize: 16.sp),),
+                          SizedBox(height: 10.h),
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            padding:EdgeInsets.symmetric(horizontal: 8.w),
                             decoration: BoxDecoration(
                               border: Border.all(color: Colors.black),
                               borderRadius: BorderRadius.circular(5),
                             ),
-                            child: const TextField(
+                            child:  TextField(
                               decoration: InputDecoration(
                                 border: InputBorder.none,
                                 hintText: 'Enter MPP (SR)',
+                                hintStyle: TextStyle(fontSize: 16.sp)
                               ),
                             ),
                           ),
-                          const SizedBox(height: 10),
+                          SizedBox(height: 10.h),
                           ElevatedButton(
                             onPressed: () {
                               Navigator.push(context, MaterialPageRoute(builder: (context)=>AddBranch()));
@@ -208,7 +209,7 @@ class _SettlementMppState extends State<SettlementMpp> {
                                 ),
                               ),
                             ),
-                            child: const Text('Confirm'),
+                            child:  Text('Confirm',style: TextStyle(fontSize: 16.sp)),
                           ),
                         ],
                       ),

@@ -6,6 +6,8 @@ import 'package:mazziah/widget/custom_app_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mazziah/widget/custom_navbar.dart';
 import 'package:mazziah/widget/generalize_branch.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 import 'models/branches_list.dart';
 import 'option_business.dart'; // Import your BranchWidget
@@ -47,13 +49,13 @@ class _BranchWalaListState extends State<BranchWalaList> {
                 Text(
                   "WALA's Program Overview",
                   style: GoogleFonts.roboto(
-                    fontSize: 20,
+                    fontSize: 20.sp,
                     fontWeight: FontWeight.w700,
                     decoration: TextDecoration.underline,
                   ),
                 ),
                 // Spacer or SizedBox for spacing
-                SizedBox(height: 20),
+                SizedBox(height: 20.h),
                 Text(
                   "Generalize to other branches",
                   style: GoogleFonts.roboto(

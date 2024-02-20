@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ScreenProgress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.all(20.h),
       child: Column(children: [
         Row(
           children: <Widget>[
@@ -15,7 +16,7 @@ class ScreenProgress extends StatelessWidget {
         ),
         Row(children: [
           Text('No. Purchase'),
-          SizedBox(width: 250,),
+          SizedBox(width: 250.w,),
           Text('10'),
         ])
       ]),
@@ -28,8 +29,8 @@ class ScreenProgress extends StatelessWidget {
         color: Colors.blue,
         borderRadius: BorderRadius.all(Radius.circular(50)),
       ),
-      width: 30,
-      height: 30,
+      width: 30.w,
+      height: 30.h,
     );
   }
 
@@ -39,8 +40,8 @@ class ScreenProgress extends StatelessWidget {
         color: Colors.blue,
         borderRadius: BorderRadius.all(Radius.circular(50)),
       ),
-      width: 30,
-      height: 30,
+      width: 30.w,
+      height: 30.h,
       child: Center(child: Text('1')),
     );
   }
@@ -48,8 +49,8 @@ class ScreenProgress extends StatelessWidget {
   Widget line() {
     return Container(
       color: Colors.blue,
-      height: 5.0,
-      width: 300.0,
+      height: 5.h,
+      width: 300.w,
     );
   }
 }

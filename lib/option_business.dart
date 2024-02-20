@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mazziah/about_mazziah.dart';
-import 'package:mazziah/branch_wala_list.dart';
 import 'package:mazziah/disclamir.dart';
 import 'package:mazziah/list_of_branch.dart';
 import 'package:mazziah/settlement.dart';
 import 'package:mazziah/widget/custom_app_bar.dart';
 import 'package:mazziah/widget/custom_navbar.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'BranchAnalysis.dart';
 
@@ -30,8 +30,7 @@ class OptionButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          primary: buttonColor,
-          onPrimary: textColor,
+          foregroundColor: textColor, backgroundColor: buttonColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25),
             side: const BorderSide(color: Colors.grey),
@@ -59,36 +58,38 @@ class _OptionBusinessState extends State<OptionBusiness> {
         Navigator.push(context, MaterialPageRoute(builder: (context)=>ListOfBranch()));
       },),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            OptionButton(text: 'Transaction History', onPressed: () {}),
-            const SizedBox(height: 30),
-            OptionButton(text: 'Help Center', onPressed: () {}),
-            const SizedBox(height: 30),
-            OptionButton(
-                text: 'About Mazziah',
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => AboutMazziah()));
-                }),
-            OptionButton(text: 'Contact Us', onPressed: () {}),
-            OptionButton(text: 'Disclaimers', onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>Disclamir()));
-            }),
-            const SizedBox(height: 30),
-            OptionButton(text: 'App Rating', onPressed: () {}),
-            const SizedBox(height: 40),
-            OptionButton(
-              text: 'Sign Out',
-              onPressed: () {},
-              // Different background color for sign out button
-              buttonColor: Color(0xfff9cc19),
-              textColor: Colors.black,
-            ),
-          ],
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              OptionButton(text: 'Transaction History', onPressed: () {}),
+              SizedBox(height: 30.h),
+              OptionButton(text: 'Help Center', onPressed: () {}),
+              SizedBox(height: 30.h),
+              OptionButton(
+                  text: 'About Mazziah',
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => AboutMazziah()));
+                  }),
+              OptionButton(text: 'Contact Us', onPressed: () {}),
+              OptionButton(text: 'Disclaimers', onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Disclamir()));
+              }),
+              SizedBox(height: 30.h),
+              OptionButton(text: 'App Rating', onPressed: () {}),
+              SizedBox(height: 40.h),
+              OptionButton(
+                text: 'Sign Out',
+                onPressed: () {},
+                // Different background color for sign out button
+                buttonColor: Color(0xfff9cc19),
+                textColor: Colors.black,
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: CustomBottomNavigationBar(

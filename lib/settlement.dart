@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mazziah/add_branch1.dart';
-import 'package:mazziah/branch_wala_list.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mazziah/list_of_branch.dart';
 import 'package:mazziah/widget/custom_app_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,11 +28,11 @@ class _SettlementState extends State<Settlement> {
 
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(20.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 10),
+              SizedBox(height: 10.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
@@ -40,7 +40,7 @@ class _SettlementState extends State<Settlement> {
                   Text(
                     'Setellment',
                     style: GoogleFonts.roboto(
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       decoration: TextDecoration.underline,
                     ),
                   ),
@@ -79,7 +79,7 @@ class _SettlementState extends State<Settlement> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 10),
+                  SizedBox(width: 10.w),
                   ElevatedButton(
                     onPressed: () {},
                     style: ButtonStyle(
@@ -96,7 +96,7 @@ class _SettlementState extends State<Settlement> {
 
                 ],
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 10.h),
               Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -109,27 +109,27 @@ class _SettlementState extends State<Settlement> {
                     ),
                     Image.asset(
                       "lib/assets/coin.png", // Replace 'your_image.png' with your image asset path
-                      width: 50, // Adjust the width as needed
-                      height: 50, // Adjust the height as needed
+                      width: 50.w, // Adjust the width as needed
+                      height: 50.h, // Adjust the height as needed
                     ),
                   ],
                 ),
               ),
               Divider(),
-              SizedBox(height: 40),
+              SizedBox(height: 40.h),
               _buildUnderlinedText('Active Settlement'),
-              SizedBox(height: 10),
+              SizedBox(height: 10.h),
               _buildSettlementRow('Subscription', '29 SR/Month', 'MPP 10SR'),
               _buildSettlementRow('Customer Purchase Count', '6', '12 SR'),
               _buildSettlementRow('Voucher', '25 SR', ''),
-              SizedBox(height: 40),
+              SizedBox(height: 40.h),
               ElevatedButton(
                 onPressed: () {},
                 child: Text('Total 46 SR', style: TextStyle(color: Colors.white),),
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(Color(0xffab0148)),
                   padding: MaterialStateProperty.all(EdgeInsets.all(15)),
-                  minimumSize: MaterialStateProperty.all(Size(double.infinity, 50)),
+                  minimumSize: MaterialStateProperty.all(Size(double.infinity, 50.w)),
                 ),
               ),
             ],
@@ -170,7 +170,7 @@ class _SettlementState extends State<Settlement> {
 
   Widget _buildSettlementRow(String title, String value1, String value2) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.all(10.h),
       decoration: BoxDecoration(
         border: Border.all(),
         borderRadius: BorderRadius.circular(25),
@@ -178,9 +178,9 @@ class _SettlementState extends State<Settlement> {
       child: Row(
         children: [
           Expanded(child: Text(title)),
-          SizedBox(width: 10),
+          SizedBox(width: 10.w),
           Expanded(child: Text(value1)),
-          SizedBox(width: 10),
+          SizedBox(width: 10.w),
           Expanded(child: Text(value2)),
         ],
       ),

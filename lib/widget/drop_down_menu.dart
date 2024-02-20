@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DropdownMenu extends StatefulWidget {
   const DropdownMenu({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class _DropdownMenuState extends State<DropdownMenu> {
       body: Center(
         child: Container(
           width: double.infinity,
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(20.h),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
             border: Border.all(color: Colors.black),
@@ -29,9 +30,9 @@ class _DropdownMenuState extends State<DropdownMenu> {
             children: [
               Text(
                 'Select an option:',
-                style: TextStyle(fontSize: 16),
+                style: TextStyle(fontSize: 16.sp),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 10.h),
               Column(
                 children: [
                   _buildOption('Describe your branch'),

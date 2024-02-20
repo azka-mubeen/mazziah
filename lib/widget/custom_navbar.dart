@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   final int initialIndex;
@@ -29,7 +30,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
     return Stack(
       children: [
         SizedBox(
-          height: 120,
+          height: 80.h,
           child: BottomNavigationBar(
             currentIndex: _selectedIndex,
             onTap: (index) {
@@ -53,15 +54,17 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               ),
             ],
             selectedItemColor: Colors.black,
+            selectedFontSize: 16.sp,
+            unselectedFontSize: 16.sp,
           ),
         ),
-        SizedBox(height: 10,),
+        SizedBox(height: 8.h,),
         Positioned(
-          bottom: 10,
+          bottom: 8.h,
           left: MediaQuery.of(context).size.width * 0.36, // 20% width
           child: Container(
             width: MediaQuery.of(context).size.width * 0.3, // 20% width
-            height: 6,
+            height: 4.h,
             color: Colors.black,
           ),
         ),

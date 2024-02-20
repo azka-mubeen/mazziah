@@ -4,7 +4,7 @@ import 'package:mazziah/list_of_branch.dart';
 import 'package:mazziah/settlement_mpp.dart';
 import 'models/owner_model.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
 class AddBranch extends StatefulWidget {
@@ -29,20 +29,20 @@ class _AddBranchState extends State<AddBranch> {
 
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(120),
+        preferredSize: Size.fromHeight(125.h),
         child: AppBar(
           automaticallyImplyLeading: false,
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
+          shape:RoundedRectangleBorder(
+            borderRadius: const BorderRadius.vertical(
               bottom: Radius.circular(15), // Set bottom border radius
             ),
             side: BorderSide(
               color: Colors.black,
-              width: 2,
+              width: 2.w,
             ),
           ),
           bottom: PreferredSize(
-            preferredSize: Size.fromHeight(50),
+            preferredSize: Size.fromHeight(50.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -54,17 +54,17 @@ class _AddBranchState extends State<AddBranch> {
                     }, icon: Icon(Icons.arrow_back_ios),),
                     Text(
                       '${owner.companyName}',
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(fontSize: 18.sp),
                     ),
-                    SizedBox(width: 103),
+                    SizedBox(width: 103.w),
                     Padding(
-                        padding: EdgeInsets.only(right: 20),
+                        padding: EdgeInsets.only(right: 20.h),
                         child: Icon(Icons.edit)),
                   ],
                 ),
                 Text(
                   '${owner.ownerName}',
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 18.sp),
                 ),
                 SizedBox(height: 20),
               ],
@@ -73,7 +73,7 @@ class _AddBranchState extends State<AddBranch> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding:  EdgeInsets.all(20.h),
         child: SingleChildScrollView(
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -91,7 +91,7 @@ class _AddBranchState extends State<AddBranch> {
                     Text(
                       'Branch Profile',
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         decoration: TextDecoration.underline,
                       ),
                     ),
@@ -99,11 +99,11 @@ class _AddBranchState extends State<AddBranch> {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 20.h),
             Text(
               'Registration No',
               style: GoogleFonts.roboto(
-                fontSize: 16,
+                fontSize: 16.sp,
                 decoration: TextDecoration.underline,
               ),
             ),
@@ -112,7 +112,7 @@ class _AddBranchState extends State<AddBranch> {
                 Expanded(
                   flex: 3,
                   child: Container(
-                    height: 40,
+                    height: 40.h,
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.black),
@@ -122,11 +122,12 @@ class _AddBranchState extends State<AddBranch> {
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: '123456789876',
+                        hintStyle: TextStyle(fontSize: 16.sp)
                       ),
                     ),
                   ),
                 ),
-                SizedBox(width: 10),
+                SizedBox(width: 10.w),
                 Expanded(
                   flex: 1,
                   child: ElevatedButton(
@@ -139,7 +140,7 @@ class _AddBranchState extends State<AddBranch> {
                     ),
                     child: Text(
                       'Check',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: 14.sp),
                     ),
                   ),
                 ),
@@ -149,7 +150,7 @@ class _AddBranchState extends State<AddBranch> {
             Text(
               'VAT No.',
               style: GoogleFonts.roboto(
-                fontSize: 16,
+                fontSize: 16.sp,
                 decoration: TextDecoration.underline,
               ),
             ),
@@ -158,21 +159,25 @@ class _AddBranchState extends State<AddBranch> {
                 Expanded(
                   flex: 3,
                   child: Container(
-                    height: 40,
-                    padding: EdgeInsets.all(10),
+                    height: 40.h,
+                    padding: EdgeInsets.all(10.h),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.black),
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: '123456789876',
+                    child: Center(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: '123456789876',
+                            hintStyle: TextStyle(fontSize: 12.sp)
+                      
+                        ),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(width: 10),
+                SizedBox(width: 10.h),
                 Expanded(
                   flex: 1,
                   child: ElevatedButton(
@@ -185,7 +190,7 @@ class _AddBranchState extends State<AddBranch> {
                     ),
                     child: Text(
                       'Check',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: 14.sp),
                     ),
                   ),
                 ),
@@ -195,7 +200,7 @@ class _AddBranchState extends State<AddBranch> {
             Text(
               'Branch Name \"English\"',
               style: GoogleFonts.roboto(
-                fontSize: 16,
+                fontSize: 16.sp,
                 decoration: TextDecoration.underline,
               ),
             ),
@@ -204,8 +209,8 @@ class _AddBranchState extends State<AddBranch> {
                 Expanded(
                   flex: 3,
                   child: Container(
-                    height: 45,
-                    padding: EdgeInsets.all(10),
+                    height: 45.h,
+                    padding: EdgeInsets.all(10.h),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.black),
                       borderRadius: BorderRadius.circular(5),
@@ -214,6 +219,8 @@ class _AddBranchState extends State<AddBranch> {
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Al-Ali, Mubarraz',
+                          hintStyle: TextStyle(fontSize: 16.sp)
+
                       ),
                     ),
                   ),
@@ -224,7 +231,7 @@ class _AddBranchState extends State<AddBranch> {
             Text(
               'Branch Name \"Arabic\"',
               style: GoogleFonts.roboto(
-                fontSize: 16,
+                fontSize: 16.sp,
                 decoration: TextDecoration.underline,
               ),
             ),
@@ -233,7 +240,7 @@ class _AddBranchState extends State<AddBranch> {
                 Expanded(
                   flex: 3,
                   child: Container(
-                    height: 45,
+                    height: 45.h,
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.black),
@@ -243,6 +250,7 @@ class _AddBranchState extends State<AddBranch> {
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'العلي، المبرز',
+                        hintStyle: TextStyle(fontSize: 12.sp)
                       ),
                     ),
                   ),
@@ -252,7 +260,7 @@ class _AddBranchState extends State<AddBranch> {
             Divider(),
             Container(
               width: MediaQuery.of(context).size.width * 0.9,
-              height: 50,
+              height: 50.h,
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.black),
@@ -284,7 +292,7 @@ class _AddBranchState extends State<AddBranch> {
             Text(
               'Branch Manager Name',
               style: GoogleFonts.roboto(
-                fontSize: 16,
+                fontSize: 16.sp,
                 decoration: TextDecoration.underline,
               ),
             ),
@@ -293,8 +301,8 @@ class _AddBranchState extends State<AddBranch> {
                 Expanded(
                   flex: 3,
                   child: Container(
-                    height: 45,
-                    padding: EdgeInsets.all(10),
+                    height: 45.h,
+                    padding: EdgeInsets.all(10.h),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.black),
                       borderRadius: BorderRadius.circular(5),
@@ -303,6 +311,7 @@ class _AddBranchState extends State<AddBranch> {
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Mohammad Nasser',
+                        hintStyle: TextStyle(fontSize: 16.sp),
                       ),
                     ),
                   ),
@@ -313,7 +322,7 @@ class _AddBranchState extends State<AddBranch> {
             Text(
               'Branch Manager Contact No.',
               style: GoogleFonts.roboto(
-                fontSize: 16,
+                fontSize: 16.sp,
                 decoration: TextDecoration.underline,
               ),
             ),
@@ -322,7 +331,7 @@ class _AddBranchState extends State<AddBranch> {
                 Expanded(
                   flex: 3,
                   child: Container(
-                    height: 40,
+                    height: 40.sp,
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.black),
@@ -336,7 +345,7 @@ class _AddBranchState extends State<AddBranch> {
                     ),
                   ),
                 ),
-                SizedBox(width: 10),
+                SizedBox(width: 10.w),
                 Expanded(
                   flex: 1,
                   child: ElevatedButton(
@@ -368,16 +377,16 @@ class _AddBranchState extends State<AddBranch> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10.h),
                     child: Text(
                       'Location in Google Map',
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(fontSize: 18.sp),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(right: 20),
-                    width: 30, // Width of the colored rectangle
-                    height: 38, // Height of the colored rectangle
+                    margin: EdgeInsets.only(right: 20.h),
+                    width: 30.w, // Width of the colored rectangle
+                    height: 38.h, // Height of the colored rectangle
                     decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
                       color: Colors.white, // Color of the rectangle
@@ -399,7 +408,7 @@ class _AddBranchState extends State<AddBranch> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10.h),
                     child: Text(
                       'Permit Google Map Rating Link',
                       style: TextStyle(fontSize: 18),
@@ -407,41 +416,41 @@ class _AddBranchState extends State<AddBranch> {
                   ),
                   Container(
                     margin: EdgeInsets.only(right: 20),
-                    width: 30, // Width of the colored rectangle
-                    height: 38, // Height of the colored rectangle
+                    width: 30.w, // Width of the colored rectangle
+                    height: 38.h, // Height of the colored rectangle
                     decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
                       color: Colors.white, // Color of the rectangle
                     ),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 10.h,
                   ),
                 ],
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 10.h,
             ),
             Divider(),
             Text(
               'Websie/ Menu /Social Medial Accounts',
               style: GoogleFonts.roboto(
-                fontSize: 16,
+                fontSize: 16.sp,
                 decoration: TextDecoration.underline,
               ),
             ),
             Row(
               children: [
                 Container(
-                    height: 20,
-                    width: 20,
+                    height: 20.h,
+                    width: 20.w,
                     child: Image.asset('lib/assets/twitter.png')),
-                SizedBox(width: 10),
+                SizedBox(width: 10.w),
                 Expanded(
                   child: Container(
-                    height: 40,
-                    padding: EdgeInsets.all(10),
+                    height: 40.h,
+                    padding: EdgeInsets.all(10.h),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.black),
                       borderRadius: BorderRadius.circular(5),
@@ -455,7 +464,7 @@ class _AddBranchState extends State<AddBranch> {
                     ),
                   ),
                 ),
-                SizedBox(width: 10),
+                SizedBox(width: 10.w),
                 IconButton(
                   icon: Icon(Icons.add_box, color: Colors.black),
                   onPressed: () {
@@ -465,7 +474,7 @@ class _AddBranchState extends State<AddBranch> {
               ],
             ),
             SizedBox(
-              height: 80,
+              height: 80.h,
             ),
             Divider(),
             Row(
@@ -474,12 +483,12 @@ class _AddBranchState extends State<AddBranch> {
                 Text(
                   'Subscription',
                   style: GoogleFonts.roboto(
-                    fontSize: 16,
+                    fontSize: 16.sp,
                     decoration: TextDecoration.underline,
                   ),
                 ),
                 Container(
-                  height: 40,
+                  height: 40.h,
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.black),
                     borderRadius: BorderRadius.circular(5),
@@ -497,15 +506,15 @@ class _AddBranchState extends State<AddBranch> {
             Row(
               children: [
                 ToggleSwitch(
-                  minWidth: 110.0,
-                  minHeight: 30,
+                  minWidth: 110.w,
+                  minHeight: 30.h,
                   initialLabelIndex: 0,
                   cornerRadius: 5.0,
                   activeFgColor: Colors.black,
                   inactiveBgColor: Colors.white,
                   inactiveFgColor: Colors.black,
                   borderColor: [Colors.black],
-                  borderWidth: 1.5,
+                  borderWidth: 1.5.w,
                   totalSwitches: 3,
                   labels: ['Basic', 'Value', 'Royal'],
                   activeBgColors: [
@@ -520,7 +529,7 @@ class _AddBranchState extends State<AddBranch> {
               ],
             ),
             SizedBox(
-              height: 30,
+              height: 30.h,
             ),
             Center(
               child: Row(
@@ -534,8 +543,8 @@ class _AddBranchState extends State<AddBranch> {
                   ),
                   Image.asset(
                     "lib/assets/coin.png", // Replace 'your_image.png' with your image asset path
-                    width: 50, // Adjust the width as needed
-                    height: 50, // Adjust the height as needed
+                    width: 50.w, // Adjust the width as needed
+                    height: 50.h, // Adjust the height as needed
                   ),
                 ],
               ),
@@ -563,7 +572,7 @@ class _AddBranchState extends State<AddBranch> {
                         '29 SR/Month',
                         style: TextStyle(color: Colors.black),
                       ),
-                      SizedBox(width: 8), // Add space between the icon and text
+                      SizedBox(width: 8.w), // Add space between the icon and text
                       Icon(
                         Icons.star,
                         color: Colors.white,
@@ -588,7 +597,7 @@ class _AddBranchState extends State<AddBranch> {
                         'MPP (SR)',
                         style: TextStyle(color: Colors.black),
                       ),
-                      SizedBox(width: 4), // Add space between the icon and text
+                      SizedBox(width: 4.w), // Add space between the icon and text
                       Container(
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -602,11 +611,11 @@ class _AddBranchState extends State<AddBranch> {
               ],
             ),
             SizedBox(
-              height: 20,
+              height: 20.w,
             ),
             Center(
               child: Container(
-                width: 100,
+                width: 100.w,
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(context,

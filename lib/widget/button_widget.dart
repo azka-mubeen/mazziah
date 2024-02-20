@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../login_page.dart';
 
 class Button extends StatefulWidget {
   final String buttonText;
@@ -22,7 +22,7 @@ class _ButtonState extends State<Button> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50,
+      height: 50.h,
       child: ElevatedButton(
         onPressed: widget.onPressed,
         style: ElevatedButton.styleFrom(
@@ -35,7 +35,7 @@ class _ButtonState extends State<Button> {
           widget.buttonText,
           style: TextStyle(
             color: Colors.white,
-            fontSize: 18,
+            fontSize: 18.sp,
           ),
         ),
       ),

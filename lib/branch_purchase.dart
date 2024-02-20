@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mazziah/BranchAnalysis.dart';
 import 'package:mazziah/branch_purchase_c.dart';
 import 'package:mazziah/branch_wala.dart';
-import 'package:mazziah/branch_wala_list.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mazziah/list_of_branch.dart';
 import 'package:mazziah/settlement.dart';
 import 'package:mazziah/widget/custom_app_bar.dart';
@@ -43,8 +43,8 @@ class _BranchPurchaseState extends State<BranchPurchase> {
                   fit: BoxFit.cover,
                 ),
                 Positioned(
-                  bottom: 13,
-                  left: 20,
+                  bottom: 15.h,
+                  left: 20.w,
                   child: Row(
                     children: [
                       TextButton(
@@ -53,19 +53,19 @@ class _BranchPurchaseState extends State<BranchPurchase> {
                         },
                         child: Text(
                           "Wala's Program",
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(color: Colors.black, fontSize: 16.sp),
                         ),
                       ),
-                      SizedBox(width: 10,),
+                      SizedBox(width: 10.sp,),
                       TextButton(
                         onPressed: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context) => BranchPurchase()));
                         },
                         child: Padding(
-                          padding: EdgeInsets.only(top: 30),
+                          padding: EdgeInsets.only(top: 30.h),
                           child: Text(
                             "New Purchase",
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: Colors.white, fontSize: 16.sp),
                           ),
                         ),
                       ),
@@ -76,7 +76,7 @@ class _BranchPurchaseState extends State<BranchPurchase> {
                         },
                         child: Text(
                           "Customer Analysis",
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(color: Colors.black, fontSize: 16.sp),
                         ),
                       ),
                     ],
@@ -85,7 +85,7 @@ class _BranchPurchaseState extends State<BranchPurchase> {
               ],
             ),
             Padding(
-              padding: EdgeInsets.all(10),
+              padding: EdgeInsets.all(10.h),
               child: Column(
                 children: [
                   Align(
@@ -94,17 +94,17 @@ class _BranchPurchaseState extends State<BranchPurchase> {
                       'Place a Customer Purchase',
                       textAlign: TextAlign.start,
                       style: GoogleFonts.roboto(
-                        fontSize: 16,
+                        fontSize: 16..sp,
                         decoration: TextDecoration.underline,
                       ),
                     ),
                   ),
                   Divider(),
-                  SizedBox(height: 20,),
+                  SizedBox(height: 20.h,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Customer QR code', style: TextStyle(fontSize: 24,),),
+                      Text('Customer QR code', style: TextStyle(fontSize: 24.sp,),),
                       ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
@@ -119,8 +119,8 @@ class _BranchPurchaseState extends State<BranchPurchase> {
                   ),
                   Align(
                     alignment: Alignment.topLeft,
-                  child: Text('Customer Phone No.', style: TextStyle(fontSize: 24,),),),
-                  SizedBox(height: 10,),
+                  child: Text('Customer Phone No.', style: TextStyle(fontSize: 24.sp,),),),
+                  SizedBox(height: 10.h,),
                   Container(
                     decoration: const BoxDecoration(
                       // border: Border.all(color: Colors.black),
@@ -137,29 +137,30 @@ class _BranchPurchaseState extends State<BranchPurchase> {
                       inputBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 10.h,),
                   Text(
                     'Double check the phone number before clicking complete',
-                    style: TextStyle(fontSize: 12,),
+                    style: TextStyle(fontSize: 12.sp,),
                   ),
                   Divider(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Purchase price (SR)"),
-                      SizedBox(width: 10), // Adjust spacing between the text and the text field
+                      Text("Purchase price (SR)", textAlign: TextAlign.center, style: TextStyle(fontSize: 16.sp),),
+                      SizedBox(width: 10.w), // Adjust spacing between the text and the text field
                       Container(
-                        padding: EdgeInsets.all(5),
-                        height: 50,
-                        width: 120,
+                        padding: EdgeInsets.all(5.h),
+                        height: 50.h,
+                        width: 120.w,
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.black),
                           borderRadius: BorderRadius.all(Radius.circular(15)),// Border on all four sides
                         ),
-                        child: const TextField(
+                        child: TextField(
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: "20",// Remove default TextField border
+                            hintText: "20",
+                            hintStyle: TextStyle(fontSize: 16.sp)
                           ),
                         ),
                       ),
@@ -170,7 +171,7 @@ class _BranchPurchaseState extends State<BranchPurchase> {
                     alignment: Alignment.center,
                     child: Container(
                       alignment: Alignment.center,
-                      width: 180,
+                      width: 180.w,
                       child: ElevatedButton(
                         onPressed: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context) => BranchPurchaseC()));
@@ -188,7 +189,7 @@ class _BranchPurchaseState extends State<BranchPurchase> {
                               'Submit',
                               style: TextStyle(color: Colors.black),
                             ),
-                            SizedBox(width: 8), // Add space between the icon and text
+                            SizedBox(width: 8.w), // Add space between the icon and text
                           ],
                         ),
                       ),

@@ -4,6 +4,7 @@ import 'package:mazziah/widget/branch_widget.dart';
 import 'models/branches_list.dart';
 import 'models/owner_model.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ListOfBranch extends StatelessWidget {
   const ListOfBranch({Key? key}) : super(key: key);
@@ -19,34 +20,34 @@ class ListOfBranch extends StatelessWidget {
     );
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(120),
+        preferredSize:  Size.fromHeight(120.h),
         child: AppBar(
           automaticallyImplyLeading: false,
           backgroundColor: Colors.white,
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
+          shape:  RoundedRectangleBorder(
+            borderRadius: const BorderRadius.vertical(
               bottom: Radius.circular(15), // Set bottom border radius
             ),
             side: BorderSide(
               color: Colors.black,
-              width: 2,
+              width: 2.w,
             ),
           ),
           bottom: PreferredSize(
-            preferredSize: const Size.fromHeight(50),
+            preferredSize: Size.fromHeight(50.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   '${owner.companyName}',
-                  style: const TextStyle(fontSize: 18),
+                  style:  TextStyle(fontSize: 18.sp),
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: 10.h),
                 Text(
                   '${owner.ownerName}',
-                  style: const TextStyle(fontSize: 18),
+                  style:  TextStyle(fontSize: 18.sp),
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: 20.h),
               ],
             ),
           ),
@@ -57,17 +58,17 @@ class ListOfBranch extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.all(20),
+            padding:  EdgeInsets.all(20.h),
             child: Text(
               'List of Branchs',
               style: GoogleFonts.roboto(
-                fontSize: 16,
+                fontSize: 16.sp,
                 decoration: TextDecoration.underline,
               ),
             ),
           ),
-          const SizedBox(
-            height: 10,
+          SizedBox(
+            height: 10.h,
           ),
           Expanded(
             child: ListView.builder(
@@ -98,14 +99,14 @@ class ListOfBranch extends StatelessWidget {
               child: Text(
                 'Add Branch +',
                 style: GoogleFonts.roboto(
-                  fontSize: 20,
+                  fontSize: 20.h,
                   color: Colors.black,
                 ),
               ),
             ),
           ),
-          const SizedBox(
-            height: 50,
+          SizedBox(
+            height: 50.h,
           )
         ],
       ),

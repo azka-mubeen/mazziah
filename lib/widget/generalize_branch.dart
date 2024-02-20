@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/branch_model.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class GeneralizeBranch extends StatefulWidget {
   final Branch branch;
@@ -16,7 +17,7 @@ class _GeneralizeBranchState extends State<GeneralizeBranch> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.symmetric(vertical: 10.h),
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [
@@ -46,8 +47,8 @@ class _GeneralizeBranchState extends State<GeneralizeBranch> {
           ),
           // Leading picture
           Container(
-            width: 60,
-            height: 60,
+            width: 60.w,
+            height: 60.h,
             decoration: BoxDecoration(
               // shape: BoxShape.circle,
               image: DecorationImage(
@@ -56,7 +57,7 @@ class _GeneralizeBranchState extends State<GeneralizeBranch> {
               ),
             ),
           ),
-          SizedBox(width: 30,),
+          SizedBox(width: 30.w,),
           // Column with branch information
           Expanded(
             child: Column(
@@ -76,13 +77,13 @@ class _GeneralizeBranchState extends State<GeneralizeBranch> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: 10.h),
               ],
             ),
           ),
           Container(
-            width: 30,
-            height: 70,
+            width: 30.w,
+            height: 70.h,
             color: widget.branch.color,
           ),
         ],

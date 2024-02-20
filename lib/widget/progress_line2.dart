@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProgressLine2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.all(20.h),
       child: Column(children: [
         Row(
           children: <Widget>[
@@ -17,9 +18,9 @@ class ProgressLine2 extends StatelessWidget {
         ),
         Row(children: [
           Text('No. Purchase'),
-          SizedBox(width: 70,),
+          SizedBox(width: 70.w,),
           Text('10'),
-          SizedBox(width: 90,),
+          SizedBox(width: 90.w,),
           Text('10'),
         ])
       ]),
@@ -32,8 +33,8 @@ class ProgressLine2 extends StatelessWidget {
         color: Colors.blue,
         borderRadius: BorderRadius.all(Radius.circular(50)),
       ),
-      width: 30,
-      height: 30,
+      width: 30.w,
+      height: 30.h,
     );
   }
 
@@ -43,8 +44,8 @@ class ProgressLine2 extends StatelessWidget {
         color: Colors.blue,
         borderRadius: BorderRadius.all(Radius.circular(50)),
       ),
-      width: 30,
-      height: 30,
+      width: 30.w,
+      height: 30.h,
       child: Center(child: Text(text)),
     );
   }
@@ -52,15 +53,15 @@ class ProgressLine2 extends StatelessWidget {
   Widget line() {
     return Container(
       color: Colors.blue,
-      height: 5.0,
-      width: 105.0,
+      height: 5.h,
+      width: 105.w,
     );
   }
 
   Widget dashedLine() {
     return Container(
-      height: 5.0,
-      width: 105.0,
+      height: 5.h,
+      width: 105.w,
       child: CustomPaint(
         painter: DashedLinePainter(),
       ),
@@ -76,8 +77,8 @@ class DashedLinePainter extends CustomPainter {
       ..strokeWidth = 1.0
       ..style = PaintingStyle.stroke;
 
-    final double dashWidth = 5.0;
-    final double dashSpace = 5.0;
+    final double dashWidth = 5.w;
+    final double dashSpace = 5.w;
     double startX = 0.0;
 
     while (startX < size.width) {

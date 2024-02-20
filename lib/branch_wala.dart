@@ -9,6 +9,7 @@ import 'BranchAnalysis.dart';
 import 'branch_purchase.dart';
 import 'branch_wala_list.dart';
 import 'option_business.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BranchWala extends StatefulWidget {
   const BranchWala({Key? key}) : super(key: key);
@@ -49,35 +50,35 @@ class _BranchWalaState extends State<BranchWala> {
                     children: [
                       Image.asset(
                         'lib/assets/brcWala.png',
+                        height: 360.h,
                         width: MediaQuery.of(context).size.width,
                         fit: BoxFit.cover,
                       ),
                       Positioned(
-                        top: 220,
-                        left: 6,
+                        top: 230.h,
+                        left: 6.w,
                         child: Row(
                           children: [
-
                             Padding(
-                              padding: EdgeInsets.only(top: 10),
+                              padding: EdgeInsets.only(top: 10.h),
                               child: TextButton(
                                 onPressed: () {
                                   Navigator.push(context, MaterialPageRoute(builder: (context)=>const BranchWala()));
                                 },
-                                child: const Text(
+                                child: Text(
                                   "\nWala's Program",
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(color: Colors.white,fontSize: 14.sp),
                                 ),
                               ),
                             ),
-                            const SizedBox(width: 10,),
+                            SizedBox(width: 10.w,),
                             TextButton(
                               onPressed: () {
                                 Navigator.push(context, MaterialPageRoute(builder: (context) => const BranchPurchase()));
                               },
-                              child: const Text(
+                              child:  Text(
                                 "New Purchase",
-                                style: TextStyle(color: Colors.black),
+                                style: TextStyle(color: Colors.black, fontSize: 14.sp),
                               ),
                             ),
                             TextButton(
@@ -85,9 +86,9 @@ class _BranchWalaState extends State<BranchWala> {
                                 Navigator.push(context, MaterialPageRoute(builder: (context) =>  BranchAnalysis()));
 
                               },
-                              child: const Text(
+                              child:  Text(
                                 "Customer Analysis",
-                                style: TextStyle(color: Colors.black),
+                                style: TextStyle(color: Colors.black, fontSize: 16.sp),
                               ),
                             ),
                           ],
@@ -97,12 +98,12 @@ class _BranchWalaState extends State<BranchWala> {
                   ),
 
                   Container(
-                    padding: EdgeInsets.all(10),
+                    padding: EdgeInsets.all(8.h),
                     alignment: Alignment.topLeft,
                     child: Text(
                       "WALA's Program Overview",
                       style: GoogleFonts.roboto(
-                        fontSize: 20,
+                        fontSize: 20.sp,
                         fontWeight: FontWeight.w700,
                         decoration: TextDecoration.underline,
                       ),
@@ -110,12 +111,12 @@ class _BranchWalaState extends State<BranchWala> {
                   ),
                   ScreenProgress(),
                   Container(
-                    padding: EdgeInsets.all(10),
+                    padding: EdgeInsets.all(8.h),
                     alignment: Alignment.topLeft,
                     child: Text(
                       "Customer WALA's Program",
                       style: GoogleFonts.roboto(
-                        fontSize: 20,
+                        fontSize: 20.sp,
                         fontWeight: FontWeight.w700,
                         decoration: TextDecoration.underline,
                       ),
@@ -139,11 +140,11 @@ class _BranchWalaState extends State<BranchWala> {
             child: Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.h),
                   child: Image.asset(
                     'lib/assets/branch.png',
-                    width: 100,
-                    height: 100,
+                    width: 80.w,
+                    height: 80.h,
                   ),
                 ),
                 Column(
@@ -151,15 +152,15 @@ class _BranchWalaState extends State<BranchWala> {
                   children: [
                     Row(
                       children: [
-                        const Text(
+                        Text(
                           "First Milestone",
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                        const SizedBox(
-                          width: 60,
+                        SizedBox(
+                          width: 60.w,
                         ),
                         IconButton(
                           icon: const Icon(Icons.edit),
@@ -169,25 +170,25 @@ class _BranchWalaState extends State<BranchWala> {
                         ),
                       ],
                     ),
-                    const Text(
+                     Text(
                       "Free small Kabab",
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    const Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
                           "Required No. Purchases",
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                         SizedBox(
-                          width: 15,
+                          width: 15.w,
                         ),
                         Text("10"),
                       ],
@@ -214,21 +215,21 @@ class _BranchWalaState extends State<BranchWala> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(10),
+                  padding:  EdgeInsets.all(8.h),
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
                       border: Border.all(color: Colors.black),
                     ),
                     child:  Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.h),
                       child: GestureDetector(
                         onTap: (){
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>BranchWalaAdd()));
                         },
                         child: Icon(
                           Icons.add,
-                          size: 20,
+                          size: 20.w,
                           color: Colors.black,
                         ),
                       ),
@@ -239,31 +240,28 @@ class _BranchWalaState extends State<BranchWala> {
             ),
           ),
           Expanded(
-            child: const SizedBox(
-              height: 0,
+            child: SizedBox(
+              height: 0.h,
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>const BranchWalaList()));
-              },
-              style: ElevatedButton.styleFrom(
-                foregroundColor: Colors.white,
-                backgroundColor: const Color(0xfff9cc19),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                minimumSize: const Size(double.infinity,
-                    0), // Set button width to 80% of available space
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const BranchWalaList()));
+            },
+            style: ElevatedButton.styleFrom(
+              foregroundColor: Colors.white,
+              backgroundColor: const Color(0xfff9cc19),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50.h),
               ),
-              child: const Padding(
-                padding: EdgeInsets.symmetric(vertical: 10),
-                child: Text(
-                  "Generlize to other Branch",
-                  style: TextStyle(fontSize: 16, color: Colors.black),
-                ),
+              minimumSize: const Size(double.infinity,
+                  0),
+            ),
+            child:Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.h),
+              child: Text(
+                "Generlize to other Branch",
+                style: TextStyle(fontSize: 15.sp, color: Colors.black),
               ),
             ),
           ),

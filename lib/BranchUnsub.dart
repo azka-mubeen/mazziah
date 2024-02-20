@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mazziah/branch_wala_list.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mazziah/list_of_branch.dart';
 import 'package:mazziah/settlement.dart';
 import 'package:mazziah/widget/custom_app_bar.dart';
@@ -30,7 +30,7 @@ class _BranchUnsabState extends State<BranchUnsab> {
         color: Colors.white.withOpacity(0.4),
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding:EdgeInsets.all(20.h),
             child: ElevatedButton(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>Settlement()));
@@ -42,7 +42,7 @@ class _BranchUnsabState extends State<BranchUnsab> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                padding:  EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
                 child: Text("In-active, go to settlement"),
               ),
             ),

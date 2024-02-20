@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:mazziah/login_page.dart';
 import 'package:mazziah/widget/button_widget.dart';
@@ -50,45 +50,45 @@ class _LoginOTBState extends State<LoginOTB> {
     return Scaffold(
         resizeToAvoidBottomInset:  false,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100),
+        preferredSize: Size.fromHeight(100.h),
         child: CustomAppBar(),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding:  EdgeInsets.all(20.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(width: 30),
+            SizedBox(width: 30.w),
             IconButton(onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
             }, icon: Icon(Icons.arrow_back_ios)),
             Text(
               'OTP Verification',
               style: GoogleFonts.roboto(
-                fontSize: 28,
+                fontSize: 28.sp,
                 fontWeight: FontWeight.normal,
               ),
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 40.h),
             Text(
               'Please Enter the code sent to the following number',
               style: GoogleFonts.roboto(
-                fontSize: 12,
+                fontSize: 12.sp,
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 20.h),
             Row(
               children: [
                 Image.asset(
                   'lib/assets/flag.png',
-                  height: 30,
-                  width: 30,
+                  height: 30.h,
+                  width: 30.w,
                 ),
-                SizedBox(width: 50),
+                SizedBox(width: 50.w),
                 Text(
                   '+1234567890', // Replace with your typed number
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 16.sp,
                   ),
                 ),
               ],
@@ -100,18 +100,18 @@ class _LoginOTBState extends State<LoginOTB> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Icon(Icons.error, color: Color(0xffab0148)),
-                SizedBox(width: 10),
+                SizedBox(width: 10.w),
                 Text(
                   'Invalid OTP',
                   style: GoogleFonts.roboto(
                     color: Color(0xffab0148),
-                    fontSize: 16,
+                    fontSize: 16.sp,
                   ),
                 ),
               ],
             ),
 
-            SizedBox(height: 50),
+            SizedBox(height: 50.h),
             OtpPinField(
               key: _otpPinFieldController,
               maxLength: 4,
@@ -141,7 +141,7 @@ class _LoginOTBState extends State<LoginOTB> {
                 }
               },
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             Row(
               children: [
@@ -160,7 +160,7 @@ class _LoginOTBState extends State<LoginOTB> {
                   Text(
                     'Did not receive the OTP?',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       color: Colors.grey[600],
                     ),
                   ),
@@ -171,7 +171,7 @@ class _LoginOTBState extends State<LoginOTB> {
                   child: Text(
                     'Resend OTP',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       decoration: TextDecoration.underline,
                       color: isResendingOTP ? Colors.green : Colors.red[300],
 
@@ -180,7 +180,7 @@ class _LoginOTBState extends State<LoginOTB> {
                 ),
               ],
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 40.h),
             Align(
               alignment: Alignment.bottomCenter,
               child: Button(

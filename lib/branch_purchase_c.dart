@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mazziah/branch_purchase.dart';
 import 'package:mazziah/widget/custom_app_bar.dart';
 import 'package:mazziah/widget/custom_navbar.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'BranchAnalysis.dart';
 import 'option_business.dart';
 
@@ -21,13 +21,13 @@ class _BranchPurchaseCState extends State<BranchPurchaseC> {
     return Scaffold(
       appBar: CustomAppBar(onBackButtonPressed: () {  Navigator.pop(context);},),
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding:  EdgeInsets.all(20.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 100),
+            SizedBox(height: 100.h),
             _buildUnderlinedText('Place a Customer Purchase'),
-            SizedBox(height: 20),
+            SizedBox(height: 20.h),
             Center(
               child: Stack(
                 children: [
@@ -35,23 +35,23 @@ class _BranchPurchaseCState extends State<BranchPurchaseC> {
                     top: 0,
                     left: 0,
                     child: Container(
-                      width: 35,
-                      height: 35,
+                      width: 35.w,
+                      height: 35.h,
                       decoration: const BoxDecoration(
                         color: Colors.black,
                         shape: BoxShape.circle,
                       ),
                       child: IconButton(
-                        icon: const Icon(Icons.close,
+                        icon: Icon(Icons.close,
                             color: Colors.white, size: 20),
                         onPressed: () {},
                       ),
                     ),
                   ),
                   Container(
-                    margin: const EdgeInsets.only(top: 20, left: 30), // Add top margin
+                    margin: EdgeInsets.only(top: 20.h, left: 30.w), // Add top margin
                     width: MediaQuery.of(context).size.width * 0.55,
-                    height: 240,
+                    height: 240.h,
                     decoration: BoxDecoration(
                       color: Color(0xffab0148),
                       borderRadius: BorderRadius.circular(20),
@@ -70,12 +70,12 @@ class _BranchPurchaseCState extends State<BranchPurchaseC> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 20.h),
             Align(
               alignment: Alignment.center,
               child: Container(
                 alignment: Alignment.center,
-                width: 180,
+                width: 180.w,
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>BranchPurchase()));
@@ -93,7 +93,7 @@ class _BranchPurchaseCState extends State<BranchPurchaseC> {
                         'Proceed',
                         style: TextStyle(color: Colors.black),
                       ),
-                      SizedBox(width: 8), // Add space between the icon and text
+                      SizedBox(width: 8.w), // Add space between the icon and text
                     ],
                   ),
                 ),

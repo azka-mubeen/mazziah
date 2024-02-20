@@ -8,7 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mazziah/widget/progress_line2.dart';
 import 'BranchAnalysis.dart';
 import 'option_business.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 class BranchWalaAdded extends StatefulWidget {
   const BranchWalaAdded({super.key});
 
@@ -46,7 +46,7 @@ class _BranchWalaAddedState extends State<BranchWalaAdded> {
                     Text(
                       "WALA's Program Overview",
                       style: GoogleFonts.roboto(
-                        fontSize: 20,
+                        fontSize: 20.sp,
                         fontWeight: FontWeight.w700,
                         decoration: TextDecoration.underline,
                       ),
@@ -56,7 +56,7 @@ class _BranchWalaAddedState extends State<BranchWalaAdded> {
                     Text(
                       "Customer WALA's Program",
                       style: GoogleFonts.roboto(
-                        fontSize: 20,
+                        fontSize: 20.sp,
                         fontWeight: FontWeight.w700,
                         decoration: TextDecoration.underline,
                       ),
@@ -79,11 +79,11 @@ class _BranchWalaAddedState extends State<BranchWalaAdded> {
               child: Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding:  EdgeInsets.all(8.h),
                     child: Image.asset(
                       'lib/assets/branch.png', // Replace 'your_image.png' with your image path
-                      width: 100,
-                      height: 100,
+                      width: 100.w,
+                      height: 100.h,
                     ),
                   ),
                   Column(
@@ -94,7 +94,7 @@ class _BranchWalaAddedState extends State<BranchWalaAdded> {
                           Text(
                             "First Milestone",
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -112,7 +112,7 @@ class _BranchWalaAddedState extends State<BranchWalaAdded> {
                       Text(
                         "Free small Kabab",
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -122,12 +122,12 @@ class _BranchWalaAddedState extends State<BranchWalaAdded> {
                           Text(
                             "Required No. Purchases",
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                           SizedBox(
-                            width: 15,
+                            width: 15.w,
                           ),
                           Text("10"),
                         ],
@@ -156,8 +156,8 @@ class _BranchWalaAddedState extends State<BranchWalaAdded> {
                     padding: const EdgeInsets.all(8.0),
                     child: Image.asset(
                       'lib/assets/branch.png', // Replace 'your_image.png' with your image path
-                      width: 100,
-                      height: 100,
+                      width: 100.w,
+                      height: 100.h,
                     ),
                   ),
                   Column(
@@ -168,7 +168,7 @@ class _BranchWalaAddedState extends State<BranchWalaAdded> {
                           Text(
                             "Second Milestone",
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -177,7 +177,7 @@ class _BranchWalaAddedState extends State<BranchWalaAdded> {
                       Text(
                         "Free Shawarma",
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 16..sp,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -187,12 +187,12 @@ class _BranchWalaAddedState extends State<BranchWalaAdded> {
                           Text(
                             "Required No. Purchases",
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                           SizedBox(
-                            width: 15,
+                            width: 15.w,
                           ),
                           Text("10"),
                         ],
@@ -253,7 +253,7 @@ class _BranchWalaAddedState extends State<BranchWalaAdded> {
                   minimumSize: Size(double.infinity, 0), // Set button width to 80% of available space
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  padding:  EdgeInsets.symmetric(vertical: 10.h),
                   child: Text(
                     "Generlize to other Branch",
                     style: TextStyle(fontSize: 16),
