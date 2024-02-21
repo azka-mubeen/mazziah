@@ -52,7 +52,7 @@ class _BranchAnalysisState extends State<BranchAnalysis> {
                 fit: BoxFit.cover, // adjust this to fit your needs
               ),
               Positioned(
-                top: 230.h,
+                top: 250.h,
                 left: 20.w,
                 child: Row(
                   children: [
@@ -167,7 +167,7 @@ class _BranchAnalysisState extends State<BranchAnalysis> {
              //Customer list
              SingleChildScrollView(
                child: Container(
-                 height: 90.h,
+                 height: 100.h,
                  child: MediaQuery.removePadding(
                    removeTop: true,
                    context: context,

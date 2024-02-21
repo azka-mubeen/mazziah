@@ -55,8 +55,8 @@ class _BranchWalaState extends State<BranchWala> {
                         fit: BoxFit.cover,
                       ),
                       Positioned(
-                        top: 230.h,
-                        left: 6.w,
+                        top: 250.h,
+                        left: 20.w,
                         child: Row(
                           children: [
                             Padding(

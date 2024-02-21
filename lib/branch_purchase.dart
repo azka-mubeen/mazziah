@@ -43,8 +43,9 @@ class _BranchPurchaseState extends State<BranchPurchase> {
                   fit: BoxFit.cover,
                 ),
                 Positioned(
-                  bottom: 15.h,
-                  left: 20.w,
+                  top: 250.h,
+                  //bottom: 15.h,
+                  left: 5.w,
                   child: Row(
                     children: [
                       TextButton(
